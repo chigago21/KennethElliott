@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TubMan Refinish · Bathtub Refinishing Chicago</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f5f2;
+            color: #1e1e1e;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            background-color: #1a2b3c;
+            color: white;
+            padding: 16px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            border-bottom: 3px solid #c9a84c;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span {
+            color: #c9a84c;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 0.95rem;
+            color: #cbd5e0;
+            letter-spacing: 0.3px;
+            border-left: 2px solid #c9a84c;
+            padding-left: 16px;
+            font-weight: 400;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(20, 30, 40, 0.6), rgba(20, 30, 40, 0.7)), 
+                url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 640px;
+            margin: 0 auto 28px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #c9a84c;
+            color: #1a1a1a;
+            padding: 14px 38px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.4px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b8932e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            color: #111;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #1a2b3c;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: #c9a84c;
+            margin: 12px auto 0;
+        }
+
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            color: #1a2b3c;
+            font-weight: 600;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            color: #2d3f4f;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .service-area-badge {
+            display: inline-block;
+            background-color: #c9a84c;
+            color: #1a2b3c;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .services {
+            padding: 80px 0;
+            background-color: #f7f5f2;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 24px 22px 28px;
+        }
+
+        .service-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1a2b3c;
+            margin-bottom: 8px;
+        }
+
+        .service-content p {
+            color: #3d4f5e;
+            margin-bottom: 0;
+            font-size: 0.98rem;
+        }
+
+        .cta-section {
+            padding: 80px 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #1a2b3c;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: #3d4f5e;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background-color: #25D366;
+            color: white;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.07);
+        }
+
+        footer {
+            background-color: #1a2b3c;
+            color: #e2e8f0;
+            padding: 48px 0 24px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section {
+            flex: 1 1 180px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #c9a84c;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cbd5e0;
+            margin-bottom: 8px;
+            display: block;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: #c9a84c;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 14px;
+            margin-top: 12px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 1.1rem;
+        }
+
+        .social-icons a:hover {
+            background: #c9a84c;
+            color: #1a1a1a;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.9rem;
+            color: #8a9aa8;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+            }
+            .logo-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+            }
+            .tagline {
+                border-left: none;
+                padding-left: 0;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 60vh;
+            }
+            .btn {
+                padding: 12px 28px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">TUBMAN <span>REFINISH</span></div>
+                <div class="tagline">Chicago · bathtub & tile refinishing</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Restore · Refinish · Renew</h1>
+            <p>Chicago's trusted bathtub & tile refinishing. We bring your bathroom back to life with a durable, high-gloss finish — no replacement needed.</p>
+            <a href="https://wa.me/12198952841?text=Hi!%20I'd%20like%20a%20quote%20for%20bathtub%20refinishing." target="_blank" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp" style="margin-right:10px;"></i> Reach out to me
+            </a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About our work</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Bathtub refinishing, done right.</h3>
+                    <p>We specialize in restoring cast iron, porcelain, fiberglass, and acrylic tubs. Our two‑part epoxy and polyurethane systems deliver a factory‑like finish that lasts for years.</p>
+                    <p>Every project is handled with precision — from surface preparation to the final buff. We also refinish tiles, sinks, and countertops, giving your entire bathroom a cohesive, updated look.</p>
+                    <p><strong>Serving all Chicago and surrounding areas. Fast turnaround · low odor · guaranteed satisfaction.</strong></p>
+                    <p style="margin-top:4px;">
+                        <span class="service-area-badge"><i class="fas fa-map-marker-alt" style="margin-right:6px;"></i> We also serve Northwest Indiana</span>
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bathtub">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our refinishing services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bathtub refinishing">
+                    <div class="service-content">
+                        <h3>Full bathtub refinish</h3>
+                        <p>Strip, repair, prime &amp; spray — your tub looks brand new. Choose from 10+ colors.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tile reglazing">
+                    <div class="service-content">
+                        <h3>Tile &amp; grout reglazing</h3>
+                        <p>Whitening, color matching, and gloss restoration for walls, floors, and shower surrounds.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sink and countertop coating">
+                    <div class="service-content">
+                        <h3>Sink &amp; countertop coating</h3>
+                        <p>Match your tub or create a fresh new look — seamless, durable ceramic‑like finish.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to transform your bathroom?</h2>
+            <p>Get a fast, free quote — just send us a message on WhatsApp with a few photos and we'll get back to you within hours.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/12198952841?text=Hi!%20I'd%20like%20a%20quote%20for%20bathtub%20refinishing." target="_blank" class="btn btn-whatsapp" style="font-size:1.2rem; padding: 16px 44px;">
+                    <i class="fab fa-whatsapp" style="margin-right:12px;"></i> Reach out
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/12198952841?text=Hi!%20I'd%20like%20a%20quote%20for%20bathtub%20refinishing." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TubMan Refinish</h3>
+                    <p>Professional bathtub & tile refinishing. We restore, we don't replace.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Service area</h3>
+                    <p>Chicago · Oak Park · Evanston · Skokie · Naperville</p>
+                    <p>+ Northwest Indiana</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fab fa-whatsapp" style="margin-right:8px; color:#25D366;"></i> +1 (219) 895-2841</p>
+                    <p><i class="fas fa-envelope" style="margin-right:8px; color:#c9a84c;"></i> tubmanreglaze@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/tubmanrefinish?igsh=cHRuMnM4bmgybThr" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-google"></i></a>
+                        <a href="#"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 TubMan Refinish · Chicago, IL</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
