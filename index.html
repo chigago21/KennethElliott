@@ -211,6 +211,8 @@
             overflow: hidden;
             box-shadow: 0 8px 24px rgba(0,0,0,0.04);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card:hover {
@@ -222,10 +224,12 @@
             width: 100%;
             height: 220px;
             object-fit: cover;
+            display: block;
         }
 
         .service-content {
             padding: 24px 22px 28px;
+            flex: 1;
         }
 
         .service-content h3 {
@@ -239,6 +243,15 @@
             color: #3d4f5e;
             margin-bottom: 0;
             font-size: 0.98rem;
+        }
+
+        .service-content .sub-service {
+            font-size: 0.95rem;
+            color: #c9a84c;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-top: 6px;
+            display: block;
         }
 
         .cta-section {
@@ -410,13 +423,13 @@
     <header>
         <div class="container">
             <div class="logo-container">
-                <div class="logo">TUB-MAN </span></div>
+                <div class="logo">TUB-MAN</div>
                 <div class="tagline">Chicago · bathtub & tile refinishing</div>
             </div>
         </div>
     </header>
 
-    <!-- HERO COM IMAGEM DE BANHEIRA -->
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
             <h1>Refinish · Restore · Renew</h1>
@@ -435,9 +448,9 @@
                     <h3>Bathtub refinishing, done right.</h3>
                     <p>Refinishing bathtubs for 30 years. Expert resurfacing for porcelain, cast iron, fiberglass, and acrylic tubs. Using a high-performance, two-component acrylic urethane topcoat system engineered with high solids for optimal durability, delivering a factory-like finish that lasts for years.</p>
                     <p>Every project is handled with precision — from surface preparation to the final coat. Also refinishing tiles, sinks, and countertops, giving your entire bathroom a cohesive, updated look.</p>
-                    <p><strong>Serving all Chicagoland and NW Indiana areas. Minimize vacancy time — low odor guaranteed satisfaction.</strong></p>
+                    <p><strong>Serving all Chicagoland and Northwest Indiana areas. Minimize downtime with low-odor service and guaranteed customer satisfaction.</strong></p>
                     <p style="margin-top:4px;">
-                        <span class="service-area-badge"><i class="fas fa-map-marker-alt" style="margin-right:6px;"></i> We also serve Northwest Indiana</span>
+                        <span class="service-area-badge"><i class="fas fa-map-marker-alt" style="margin-right:6px;"></i> Northwest Indiana</span>
                     </p>
                 </div>
                 <div class="about-image">
@@ -447,28 +460,36 @@
         </div>
     </section>
 
+    <!-- SERVICES section with all requested changes -->
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Our refinishing services</h2>
+            <h2 class="section-title">My Refinishing Services</h2>
             <div class="service-grid">
+
+                <!-- 1. Full bathtub refinish — image of bathtub (using tub image) -->
                 <div class="service-card">
                     <img src="https://i.pinimg.com/736x/b1/85/c6/b185c61484d25cbafc9315ec98b7089c.jpg" alt="Full bathtub refinish">
                     <div class="service-content">
                         <h3>Full bathtub refinish</h3>
-                        <p>Your tub will look brand new. Choose from 10+ colors. Strip, repair, prime &amp; spray — factory-like finish that lasts.</p>
+                        <p>Your tub will look brand new. Choose from 10+ colors. Factory-like finish that lasts.</p>
                     </div>
                 </div>
+
+                <!-- 2. Tile & grout reglazing — with both "Tile & grout reglazing" and "Tile Reglazing" -->
                 <div class="service-card">
-                    <img src="https://i.pinimg.com/736x/a5/33/03/a5330332d78d52402f4db9430d41e7b6.jpg" alt="Tile and grout reglazing">
+                    <img src="https://i.pinimg.com/736x/a5/33/03/a5330332d78d52402f4db9430d41e7b6.jpg" alt="Tile and bathtub refinishing">
                     <div class="service-content">
                         <h3>Tile &amp; grout reglazing</h3>
-                        <p>High Gloss restoration tile and shower surrounds. Easy to restore the look of your tile back to its original appearance with a range of solid colors.</p>
+                        <p>High-gloss restoration for tiles and shower surrounds. Restore your tiles to their original appearance with a range of solid colors.</p>
+                        <span class="sub-service">Tile Reglazing</span>
                     </div>
                 </div>
+
+                <!-- 3. Sink & countertop coating — image above wording, wording "Sink and Countertop Refinishing" -->
                 <div class="service-card">
-                    <img src="https://i.pinimg.com/736x/22/68/df/2268dfc7133805dfad757c48eafb1cee.jpg" alt="Sink and countertop coating">
+                    <img src="https://i.pinimg.com/736x/22/68/df/2268dfc7133805dfad757c48eafb1cee.jpg" alt="Sink and countertop refinishing">
                     <div class="service-content">
-                        <h3>Sink &amp; countertop coating</h3>
+                        <h3>Sink &amp; Countertop Refinishing</h3>
                         <p>Transform kitchen countertops and bathroom vanities with a durable stone-look finish. Wide range of color options.</p>
                     </div>
                 </div>
@@ -492,16 +513,17 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- FOOTER — removed "We restore, we don't replace" -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Tub-Man</h3>
-                    <p>Professional bathtub & tile refinishing. Restore, Don't replace. We restore, we don't replace.</p>
+                    <p>Professional bathtub & tile refinishing.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Service area</h3>
-                    <p><strong>ChicagoLand Area:</strong> Chicago · Oak Park · Evanston · Skokie · Naperville</p>
+                    <p><strong>Chicagoland Area:</strong> Chicago · Oak Park · Evanston · Skokie · Naperville</p>
                     <p><strong>Northwest Indiana:</strong> Dyer, Gary, Merrillville, Highland, Griffith, Schererville, St John</p>
                 </div>
                 <div class="footer-section">
